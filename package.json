@@ -1,0 +1,43 @@
+{
+    "name": "slide-layouts",
+    "version": "1.0.0",
+    "description": "NodeCG slide layouts",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "git@git@github.com:overspecnet/slide-layouts.git"
+    },
+    "nodecg": {
+        "compatibleRange": "^1.0.0",
+        "dashboardPanels": [
+            {
+                "name": "dashboard",
+                "title": "dashboard",
+                "file": "dashboard.html",
+                "fullbleed": true
+            }
+        ],
+        "graphics": [
+            {
+                "width": 1920,
+                "height": 1080,
+                "file": "graphics.html"
+            }
+        ],
+        "assetCategories": [
+            {
+                "name": "slide",
+                "title": "スライド画像",
+                "allowedTypes": [
+                    "jpg",
+                    "jpeg",
+                    "png"
+                ]
+            }
+        ]
+    }
+}

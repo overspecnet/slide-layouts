@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  nodecg:
+    image: ${LAYOUTS_NAME}
+    build: 
+      context: .
+      args:
+        - LAYOUTS_NAME=${LAYOUTS_NAME}
+    restart: always
+    volumes:
+      - ./dashboard:/app/nodecg/bundles/${LAYOUTS_NAME}/dashboard
+      - ./extension:/app/nodecg/bundles/${LAYOUTS_NAME}/extension
+      - ./graphics:/app/nodecg/bundles/${LAYOUTS_NAME}/graphics
+      - ./cfg:/app/nodecg/cfg
+      - ./nodecg/db:/app/nodecg/db
+      - ./nodecg/logs:/app/nodecg/logs
+      - ./nodecg/assets:/app/nodecg/assets
+    ports: 
+      - ${ACCESS_PORT}:9090

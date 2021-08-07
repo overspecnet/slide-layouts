@@ -1,0 +1,11 @@
+body {
+    background-color: rgba(0, 0, 0, 0);
+    margin: 0px auto;
+    overflow: hidden;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+#slide {
+    width: 1920px;
+    height: 1080px;
+}

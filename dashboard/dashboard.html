@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <button id="prevButton" onclick="prev();">前の画像</button>
+        <button id="nextButton" onclick="next();">次の画像</button>
+        <span id="currentSlide"></span>
+        <br>
+        <img id="slide">
+    </body>
+
+    <style>
+        #slide {
+            width: 50%;
+            height: 50%;
+        }
+    </style>
+
+    <script>
+        const assetsPath = "/assets/slide-layouts/slide/";
+
+        const currentPageRep = nodecg.Replicant("currentPage");
+
+        let currentPage = 0;
+        window.onload = function() {
+            nodecg.readReplicant("currentPage", value => {
+                if (value == null) {
+                    currentPage = 1
+                } else {
+                    currentPage = value;
+                }
+                setImage();
+            });
+        }
+
+        function next() {
+            currentPage++;
+            setImage();
+        }
+
+        function prev() {
+            currentPage--;
+            setImage();
+        }
+
+        function setImage() {
+            currentPageRep.value = currentPage;
+            let setImageName = ('000' + currentPage).slice(-3) + ".png";
+            currentSlide.innerText = setImageName; 
+            slide.src = assetsPath + setImageName;
+        }
+    </script>
+</html>
